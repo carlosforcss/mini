@@ -11,6 +11,8 @@ async fn main() {
 
     let db: Db = Arc::new(Mutex::new(HashMap::new()));
 
+    println!("LISTENING...");
+
     loop {
         let (socket, _) = listener.accept().await.unwrap();
         let db = db.clone();
@@ -26,6 +28,7 @@ async fn process(socket: TcpStream, db: Db) {
     let mut connection = Connection::new(socket);
 
     while let Some(frame) = connection.read_frame().await.unwrap() {
+        println!("Processing event... {:?}", frame);
         let response = match Command::from_frame(frame).unwrap() {
             Set(cmd) => {
                 let mut db = db.lock().unwrap();
