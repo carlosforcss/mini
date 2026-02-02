@@ -1,0 +1,94 @@
+####################################
+# Rust / Cargo
+####################################
+
+# Cargo build output (any depth)
+target/
+
+# Backup files created by rustfmt
+**/*.rs.bk
+
+# Cargo.lock
+# - Keep it if this is a binary/app
+# - Ignore it if this is a library workspace
+# Uncomment ONE of the following:
+
+# Cargo.lock
+# !Cargo.lock
+
+
+####################################
+# Logs / runtime artifacts
+####################################
+
+*.log
+*.out
+*.pid
+
+
+####################################
+# Environment / secrets
+####################################
+
+.env
+.env.*
+!.env.example
+
+
+####################################
+# Editor / IDE
+####################################
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains (CLion, IntelliJ, RustRover)
+.idea/
+*.iml
+
+# Neovim / Vim
+.nvim/
+.vim/
+*.swp
+*.swo
+*~
+
+
+####################################
+# OS junk
+####################################
+
+# macOS
+.DS_Store
+
+# Linux
+.Trash-*
+.fuse_hidden*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+
+####################################
+# Tooling / misc
+####################################
+
+# Coverage
+coverage/
+*.profraw
+*.profdata
+
+# Benchmarks
+criterion/
+
+# Flamegraph
+flamegraph.svg
+
+# Tarballs / zips
+*.tar
+*.tar.gz
+*.zip
+
